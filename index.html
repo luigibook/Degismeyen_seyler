@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değişmeyen İcatlar | Ümit Emre Erdoğan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        .contents {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .content-item {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background-color: #edf2f7;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .content-item:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .icat {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .icat-title {
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .icat-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 60px;
+            height: 2px;
+            background-color: #667eea;
+        }
+        .icat-meta {
+            font-style: italic;
+            color: #718096;
+            margin-bottom: 15px;
+        }
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 15px;
+            background-color: #edf2f7;
+            color: #4a5568;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        .back-to-top:hover {
+            background-color: #667eea;
+            color: white;
+        }
+        @media (max-width: 640px) {
+            .header {
+                padding: 30px 15px;
+            }
+            .contents {
+                padding: 15px;
+            }
+            .icat {
+                padding: 15px;
+            }
+        }
+        .accordion {
+            margin-bottom: 30px;
+        }
+        .year-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background-color: #4c1d95;
+            color: white;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .origin-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background-color: #064e3b;
+            color: white;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="text-4xl font-bold mb-2">Değişmeyen İcatlar</h1>
+            <h2 class="text-xl mb-4">Tasarımı Yüzyıllardır Değişmemiş İcatların Tarihi</h2>
+            <p class="text-lg">Ümit Emre Erdoğan tarafından derlenen</p>
+        </header>
+
+        <div class="introduction mb-8">
+            <p class="text-lg text-center mb-6">Tarih boyunca yapılan buluşlar içinde bazıları o kadar mükemmel tasarlanmıştır ki, yüzyıllar geçmesine rağmen temel tasarım prensipleri neredeyse hiç değişmemiştir. Bu icatlar, ilk ortaya çıktıkları dönemden beri kavramsal olarak aynı kalmış ve günümüzde de hala aynı şekilde kullanılmaktadır.</p>
+        </div>
+
+        <div class="contents" id="contents">
+            <h2 class="text-2xl font-bold mb-4">İçindekiler</h2>
+            <p class="mb-4 text-sm">İlgilendiğiniz icata tıklayarak detaylı bilgiye ulaşabilirsiniz:</p>
+            <div class="flex flex-wrap">
+                <a href="#icat1" class="content-item">Çengelli İğne</a>
+                <a href="#icat2" class="content-item">Tükenmez Kalem</a>
+                <a href="#icat3" class="content-item">Fermuar</a>
+                <a href="#icat4" class="content-item">Makas</a>
+                <a href="#icat5" class="content-item">İğne</a>
+                <a href="#icat6" class="content-item">Konserve Açacağı</a>
+                <a href="#icat7" class="content-item">Kurşun Kalem</a>
+                <a href="#icat8" class="content-item">Çivi</a>
+                <a href="#icat9" class="content-item">Düğme</a>
+                <a href="#icat10" class="content-item">Tekerlek</a>
+                <a href="#icat11" class="content-item">Teneke Konserve</a>
+                <a href="#icat12" class="content-item">El Feneri</a>
+                <a href="#icat13" class="content-item">Mandal</a>
+                <a href="#icat14" class="content-item">Bisiklet</a>
+                <a href="#icat15" class="content-item">Çekiç</a>
+                <a href="#icat16" class="content-item">Kaşık, Çatal ve Bıçak</a>
+                <a href="#icat17" class="content-item">Şemsiye</a>
+                <a href="#icat18" class="content-item">Bakır Tencere ve Tavalar</a>
+                <a href="#icat19" class="content-item">El Aynası</a>
+                <a href="#icat20" class="content-item">Çömlekçi Çarkı</a>
+                <a href="#icat21" class="content-item">Merdiven</a>
+                <a href="#icat22" class="content-item">Maşa</a>
+                <a href="#icat23" class="content-item">Masa ve Sandalye</a>
+                <a href="#icat24" class="content-item">Fırça</a>
+                <a href="#icat25" class="content-item">Pusula</a>
+                <a href="#icat26" class="content-item">Yüksük</a>
+                <a href="#icat27" class="content-item">Havan ve Eli</a>
+                <a href="#icat28" class="content-item">Kama</a>
+                <a href="#icat29" class="content-item">İp</a>
+                <a href="#icat30" class="content-item">Güneş Saati</a>
+                <a href="#icat31" class="content-item">Oklar</a>
+                <a href="#icat32" class="content-item">Kilit ve Anahtar</a>
+                <a href="#icat33" class="content-item">Merdane</a>
+                <a href="#icat34" class="content-item">Terazi</a>
+                <a href="#icat35" class="content-item">Tokmak</a>
+                <a href="#icat36" class="content-item">Çömlek ve Seramik Kaplar</a>
+                <a href="#icat37" class="content-item">Tarak</a>
+                <a href="#icat38" class="content-item">Matara/Su Kabı</a>
+                <a href="#icat39" class="content-item">Olta</a>
+                <a href="#icat40" class="content-item">Kürek</a>
+                <a href="#icat41" class="content-item">Fırın</a>
+                <a href="#icat42" class="content-item">Süpürge</a>
+                <a href="#icat43" class="content-item">Zar</a>
+                <a href="#icat44" class="content-item">Ok ve Yay</a>
+                <a href="#icat45" class="content-item">Yelken</a>
+                <a href="#icat46" class="content-item">Testere</a>
+                <a href="#icat47" class="content-item">Dikiş İğnesi</a>
+                <a href="#icat48" class="content-item">Bıçak</a>
+                <a href="#icat49" class="content-item">Eğirmen</a>
+                <a href="#icat50" class="content-item">Dokuma Tezgahı</a>
+            </div>
+        </div>
+
+        <div class="icatlar">
+            <div id="icat1" class="icat">
+                <h3 class="icat-title text-2xl font-bold">1. Çengelli İğne (Paper Clip)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1899</span>
+                    <span class="origin-badge">İngiltere</span>
+                    <span class="text-sm">Mucit: Gem Manufacturing Company</span>
+                </div>
+                <p>Bugün yaygın olarak kullandığımız klasik çengelli iğne (Gem tipi paper clip), 1899 yılında tasarlanmıştır. Her ne kadar Norveçli Johan Vaaler'in 1899'da patent aldığı düşünülse de, modern çift halkalı tasarım İngiliz Gem Manufacturing Company tarafından geliştirilmiştir.</p>
+                <p class="mt-3">İlginç bir şekilde, bu tasarım asla patentlenmemiştir ve 1900'lerin başından beri neredeyse hiç değişmeden kalmıştır. Üretim süreci ve kullanılan malzemelerde bazı iyileştirmeler olsa da, çengelli iğnenin temel Gem tasarımı yaklaşık 125 yıldır aynıdır. Bu tasarım mükemmel ergonomik özellikleriyle, basitliğine rağmen etkili bir çözüm sunmaktadır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat2" class="icat">
+                <h3 class="icat-title text-2xl font-bold">2. Tükenmez Kalem (Ballpoint Pen)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1938</span>
+                    <span class="origin-badge">Macaristan</span>
+                    <span class="text-sm">Mucit: László Bíró</span>
+                </div>
+                <p>Macar gazeteci László Bíró, kardeşi György ile birlikte modern tükenmez kalemi 1938 yılında icat etmiş ve patentini almıştır. Bíró'nun tasarımı, bir mürekkep haznesinin ucunda dönen küçük bir bilye içeriyordu. Bu bilye, mürekkebi kağıda aktarırken dönüyor ve böylece sürekli bir yazı akışı sağlıyordu.</p>
+                <p class="mt-3">Amerikan Makine Mühendisleri Topluluğu (ASME) kaynaklarına göre, "tükenmez kalemin mevcut tasarımı, Bíró'nun orijinal fikrinden neredeyse hiç değişmemiştir." Malzeme kalitesi ve üretim tekniklerinde bazı gelişmeler olsa da, temel çalışma prensibi 85+ yıldır aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat3" class="icat">
+                <h3 class="icat-title text-2xl font-bold">3. Fermuar (Zipper)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1913</span>
+                    <span class="origin-badge">ABD</span>
+                    <span class="text-sm">Mucit: Gideon Sundback</span>
+                </div>
+                <p>Fermuar fikri 1893'te Whitcomb L. Judson tarafından geliştirilmiş olsa da, bugün kullandığımız modern fermuarı 1913 yılında İsveçli-Amerikalı mühendis Gideon Sundback tasarlamıştır. "Ayrılabilir Bağlayıcı" adıyla 1917'de patent almıştır.</p>
+                <p class="mt-3">Cleveland girişimcisi tarafından 2016'da yapılan açıklamada belirtildiği gibi: "Fermuar, tasarımı yüz yıl önce icat edildiğinden beri nispeten değişmeden kalmış yaygın bir moda aksesuarıdır." Materyallerde bazı değişiklikler (örneğin 1960'larda naylon kullanımı) olsa da, fermuarın temel dişli sistemi ve çalışma prensibi aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat4" class="icat">
+                <h3 class="icat-title text-2xl font-bold">4. Makas (Scissors)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 1500 / MS 100</span>
+                    <span class="origin-badge">Antik Mısır ve Roma</span>
+                </div>
+                <p>Makasın en ilkel formları MÖ 1500 civarında Antik Mısır'da görülmüştür. Ancak bugün kullandığımıza benzeyen çapraz bıçaklı makas tasarımı, MS 100 civarında Romalılar tarafından geliştirilmiştir.</p>
+                <p class="mt-3">3 Claveles'in blogu şöyle belirtir: "Orta Çağ boyunca makaslar yavaşça gelişti. Daha çok terziler ve berberler tarafından kullanılırdı ve tasarımları büyük ölçüde değişmeden kaldı." 1700'lerde Robert Hinchliffe tarafından İngiltere'de çelik kullanılarak yapılan iyileştirmeler dışında, makasın temel tasarımı yüzlerce yıldır aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat5" class="icat">
+                <h3 class="icat-title text-2xl font-bold">5. İğne (Needle)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 17,500</span>
+                    <span class="origin-badge">Paleolitik dönem</span>
+                </div>
+                <p>İğne, insanlık tarihinin en eski ve tasarımı en az değişen aletlerinden biridir. SCHMETZ iğne şirketinin belirttiği gibi: "MÖ 17,500'den daha sonraya ait iğneler, bugün kullanılan el dikiş iğnesinin iki karakteristik özelliğine sahipti... bir uçta göz ve diğer uçta sivrilen uç."</p>
+                <p class="mt-3">Dikiş iğnesinin bu temel tasarımı yaklaşık 19,500 yıldır neredeyse hiç değişmemiştir. Malzeme olarak kemikten bronza, daha sonra demire ve en sonunda modern çeliğe geçiş yapılmıştır, ancak temel form ve işlev aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat6" class="icat">
+                <h3 class="icat-title text-2xl font-bold">6. Konserve Açacağı (Can Opener)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1858</span>
+                    <span class="origin-badge">ABD</span>
+                    <span class="text-sm">Mucit: Ezra Warner</span>
+                </div>
+                <p>Konserve kutuları 1810'da icat edilmesine rağmen, pratik bir konserve açacağı ancak 48 yıl sonra, 1858'de Ezra Warner tarafından icat edilmiştir. William Lyman tarafından 1870'te geliştirilen ve bir çark içeren tasarım, modern konserve açacağının temelini oluşturmuştur.</p>
+                <p class="mt-3">İcatla Teknoloji Dergisi'nin belirttiği gibi: "Konserve açacağı tasarımı son 70 yılda çok fazla değişmemiştir, iyileştirmeye açık çok alan olmasına rağmen." İlginçtir ki, pratik bir konserve açacağı icat edilmeden önce, insanlar konserve kutularını çekiç ve keski kullanarak açmak zorunda kalıyordu!</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat7" class="icat">
+                <h3 class="icat-title text-2xl font-bold">7. Kurşun Kalem (Pencil)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1795</span>
+                    <span class="origin-badge">Fransa</span>
+                    <span class="text-sm">Mucit: Nicholas-Jacques Conte</span>
+                </div>
+                <p>Modern kurşun kalem, 1795'te Napolyon Bonaparte'ın ordusunda görev yapan bilim adamı Nicholas-Jacques Conte tarafından icat edilmiştir. Conte, grafit tozunu kil ile karıştırıp fırınlayarak bugün kullandığımız kurşun kalemin içini oluşturan "mine"yi geliştirdi.</p>
+                <p class="mt-3">Jackson's Art Blog'dan aktarıldığına göre: "Sanatçı kalemlerinin temel tasarımı son 200 yılda çok fazla değişmemiştir." Kalemin altıgen şekli, kağıt sarfiyatını minimize eden ve masadan yuvarlanmayı engelleyen pratik formu ile günümüze kadar gelmiştir. Quora'da bir uzmanın belirttiği gibi: "Kalemler yaklaşık 150 yıldır neredeyse hiç değişmemiştir. Henry David Thoreau tarafından kullanılan kalem, günümüzdekilerle çok benzerdir."</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat8" class="icat">
+                <h3 class="icat-title text-2xl font-bold">8. Çivi (Nail)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 3400</span>
+                    <span class="origin-badge">Antik Mısır</span>
+                </div>
+                <p>Çivi, inşaat tarihinin en eski ve değişmeyen aletlerinden biridir. Arkeologlar, Antik Mısır'da MÖ 3400 civarına ait çiviler bulmuşlardır. BS Fixings'in blogu şöyle belirtir: "Orijinal tasarım büyük ölçüde değişmeden kalmıştır."</p>
+                <p class="mt-3">El yapımı dövme çivilerden makine üretimi çivilere geçiş olsa da, çivinin temel tasarımı - sivrilen bir uç ve bir baş - binlerce yıldır değişmemiştir. Farklı çivi türleri farklı amaçlara hizmet etse de, temel prensip aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat9" class="icat">
+                <h3 class="icat-title text-2xl font-bold">9. Düğme (Button)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 2000-2500</span>
+                    <span class="origin-badge">İndus Vadisi Uygarlığı</span>
+                </div>
+                <p>İlk düğmeler süs eşyası olarak kullanılıyordu ve MÖ 2000-2500 civarında İndus Vadisi Uygarlığı'nda görülmüştür. Ancak düğmelerin modern anlamda bağlayıcı olarak kullanımı, ilik deliğinin icadıyla birlikte Rönesans döneminde yaygınlaşmıştır.</p>
+                <p class="mt-3">Nancy's Notions'ın belirttiği gibi: "Düğmeler için gerçek dönüm noktası Rönesans döneminde geldi. İlik deliğinin icadı, düğmelerin sadece süslemelerden daha fazlası olmasına izin verdi." Buna rağmen, düğmenin temel tasarımı - bir yüzey ve bir gövde ile tutturma mekanizması - yüzlerce yıldır değişmemiştir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat10" class="icat">
+                <h3 class="icat-title text-2xl font-bold">10. Tekerlek (Wheel)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 3500</span>
+                    <span class="origin-badge">Mezopotamya</span>
+                </div>
+                <p>Tekerlek, insanlık tarihinin en devrim niteliğindeki icatlarından biridir. İlk tekerlek MÖ 3500 civarında Mezopotamya'da icat edildiği düşünülmektedir. Başlangıçta katı ahşap disklerden oluşuyordu.</p>
+                <p class="mt-3">TyreSafe'in belirttiği gibi: "Parmak tekerlekler MÖ 2000 civarında Anadolu'da icat edildi. Bugün hâlâ kullanımda olan tasarım, çevreye bağlı bir merkez göbeğe sahiptir." Tekerleğin bu temel konsepti - dairesel bir form ve bir merkez ekseni - binyıllardır değişmeden kalmıştır, sadece malzeme ve üretim tekniklerinde iyileştirmeler yapılmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat11" class="icat">
+                <h3 class="icat-title text-2xl font-bold">11. Teneke Konserve (Tin Can)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1810</span>
+                    <span class="origin-badge">İngiltere</span>
+                    <span class="text-sm">Mucit: Peter Durand</span>
+                </div>
+                <p>Modern teneke konserve, 1810 yılında İngiliz tüccar Peter Durand tarafından icat edilmiştir ve 25 Ağustos 1810'da Kral III. George tarafından patent verilmiştir. İlginçtir ki, konserve kutularının yaygın kullanımına rağmen, pratik bir konserve açacağı ancak 48 yıl sonra icat edilmiştir.</p>
+                <p class="mt-3">Teneke konservenin temel tasarımı - gıdayı korumak için kapatılmış metal bir kap - iki yüzyıldır neredeyse aynı kalmıştır. Üretim teknikleri gelişmiş olsa da (örneğin 1896'da çift katlama teknolojisi), teneke konserve temel işlevini aynı şekilde yerine getirmeye devam etmektedir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat12" class="icat">
+                <h3 class="icat-title text-2xl font-bold">12. El Feneri (Flashlight)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1899</span>
+                    <span class="origin-badge">ABD</span>
+                    <span class="text-sm">Mucit: David Misell</span>
+                </div>
+                <p>İlk pratik el feneri, 1899 yılında David Misell tarafından icat edilmiş ve American Electrical Novelty and Manufacturing Company (daha sonra Ever Ready Company) adına patentlenmiştir.</p>
+                <p class="mt-3">El fenerinin temel tasarımı - piller, ampul ve yansıtıcı ayna içeren silindirik bir gövde - 120+ yıldır değişmemiştir. LED teknolojisi ve şarj edilebilir piller gibi teknolojik ilerlemeler olsa da, el fenerinin temel konsepti ve kullanımı aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat13" class="icat">
+                <h3 class="icat-title text-2xl font-bold">13. Mandal (Clothes Pin)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1853</span>
+                    <span class="origin-badge">ABD</span>
+                    <span class="text-sm">Mucit: David M. Smith</span>
+                </div>
+                <p>Modern yaylı mandalın patenti 1853 yılında Amerikalı David M. Smith tarafından alınmıştır. Bu tasarımdan önce, basit ağaç parçaları çamaşır asmak için kullanılıyordu.</p>
+                <p class="mt-3">Smith'in yaylı mandal tasarımı, iki ahşap parça ve bunları birleştiren bir metal yaydan oluşuyordu. Bu temel tasarım 170 yıldır neredeyse hiç değişmemiştir. Plastik malzemeler kullanılmaya başlansa da, mandalın temel mekanizması ve işlevi aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat14" class="icat">
+                <h3 class="icat-title text-2xl font-bold">14. Bisiklet (Bicycle)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">1885</span>
+                    <span class="origin-badge">İngiltere</span>
+                    <span class="text-sm">Mucit: John Kemp Starley</span>
+                </div>
+                <p>Modern bisiklet tasarımı 1885 yılında İngiliz mucit John Kemp Starley tarafından "güvenli bisiklet" olarak geliştirilmiştir. Bu tasarım, günümüzde kullandığımız bisikletlerin temel özelliklerini içeriyordu: iki eşit boyuttaki tekerlek, zincir tahrikli arka tekerlek ve metal çerçeve.</p>
+                <p class="mt-3">Auburn Üniversitesi'nin direktörlük köşesinde belirtildiği gibi: "Bisiklet iki yüz yıl önce, 12 Haziran 1817'de Almanya'nın Mannheim şehrinde Baron Karl von Drais tarafından tanıtıldı. Ahşaptan yapılmıştı ve pedalları yoktu." Ancak modern bisikletin temel tasarımı, 1885'teki "güvenli bisiklet" modeli ile belirlenmiş ve o zamandan beri ana hatları değişmemiştir. Malzemeler hafifleşmiş ve daha dayanıklı hale gelmiş olsa da, bisikletin temel mekanik prensibi aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat15" class="icat">
+                <h3 class="icat-title text-2xl font-bold">15. Çekiç (Hammer)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 30,000</span>
+                    <span class="origin-badge">Taş Devri</span>
+                </div>
+                <p>Çekiç, insanlık tarihinin en eski aletlerinden biridir. İlkel taş çekiçler MÖ 30,000 civarında kullanılmaktaydı, ancak modern çekicin tasarımı binlerce yıldır temel olarak aynıdır.</p>
+                <p class="mt-3">Quora'da bir uzmanın dediği gibi: "Standart pençeli çekiç, etkili, işlevsel ve basit tasarımı sayesinde yüzyıllardır büyük ölçüde değişmeden kalmıştır." Çekiç - bir sap ve başlık tasarımı - en basit ancak en etkili aletlerden biridir. Uçların şekli ve malzemesi değişse de, temel tasarım prensibi aynı kalmıştır. Modern çekiç ile yüz yıl önceki çekiç arasında işlevsel olarak neredeyse hiçbir fark yoktur.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat16" class="icat">
+                <h3 class="icat-title text-2xl font-bold">16. Kaşık, Çatal ve Bıçak (Spoon, Fork and Knife)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 1300 / MS 1000 / Prehistorik</span>
+                    <span class="origin-badge">Çeşitli medeniyetler</span>
+                </div>
+                <p>Yemek takımlarının temel tasarımı yüzyıllardır neredeyse hiç değişmemiştir. Kaşıklar Antik Mısır'da MÖ 1300 civarında kullanılmaktaydı. Çatallar daha sonra, MS 1000 civarında Bizans İmparatorluğu'nda ortaya çıktı ve başlangıçta sadece iki dişliydi. Bıçakların kullanımı ise prehistorik döneme kadar uzanır.</p>
+                <p class="mt-3">TodayIFoundOut.com'a göre: "Arkeolojik kanıtlar, saplı kaşıkların antik Mısır'da dini amaçlar için MÖ 1000 civarında kullanıldığını göstermektedir." Modern çatal-kaşık-bıçak takımlarının temel tasarımı, malzeme ve üretim tekniklerindeki gelişmelere rağmen, yüzyıllar boyunca işlevsel olarak aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat17" class="icat">
+                <h3 class="icat-title text-2xl font-bold">17. Şemsiye (Umbrella)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 4000</span>
+                    <span class="origin-badge">Antik Mısır ve Mezopotamya</span>
+                </div>
+                <p>Şemsiyenin ilk formları MÖ 4000 civarında Antik Mısır ve Mezopotamya'da güneşten korunmak için kullanılmaktaydı. Modern şemsiyenin çelik kaburgalı tasarımı ise 1852'de Samuel Fox tarafından icat edildi.</p>
+                <p class="mt-3">Medium'da bir makalede belirtildiği gibi: "Şemsiyeyi yeniden icat etme girişimlerinden sonra, tasarımın eski günlerden bu yana radikal olarak değişmediğini kesinlikle söyleyebiliriz." Katlanabilir şemsiye ise 1923'te Macaristan'da Balogh kardeşler tarafından icat edilmiştir. Bu iki temel şemsiye modeli (standart ve katlanabilir) günümüzde de neredeyse aynı mekanizma ile kullanılmaya devam etmektedir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat18" class="icat">
+                <h3 class="icat-title text-2xl font-bold">18. Bakır Tencere ve Tavalar (Copper Pots and Pans)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 9000</span>
+                    <span class="origin-badge">Orta Doğu, Neolitik dönem</span>
+                </div>
+                <p>Bakır mutfak gereçleri, insanlığın en eski pişirme araçlarından biridir. ProWare Kitchen'in belirttiği gibi: "Orta Doğu'nun çeşitli bölgelerinde bulunan parçalar MÖ 9000 kadar eskiye dayanıyor, bu da bakırla pişirmenin Neolitik dönemde başladığını gösteriyor."</p>
+                <p class="mt-3">AllORA'nın bir makalesinde belirtildiği gibi: "Yeni kullanım alanlarına rağmen, birçok insan hala bakırı antik medeniyetlerde kullanıldığı şekilde kullanmaya devam ediyor." Bakır tencere ve tavaların temel formları - geniş alt kısım, yüksek kenarlar ve tutma kulpları - binlerce yıldır değişmemiştir. Bakırın mükemmel ısı iletkenliği, bu mutfak gereçlerini aşçıların vazgeçilmezi yapmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat19" class="icat">
+                <h3 class="icat-title text-2xl font-bold">19. El Aynası (Hand Mirror)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 4000-3000</span>
+                    <span class="origin-badge">Mezopotamya ve Antik Mısır</span>
+                </div>
+                <p>El aynalarının tarihi Mezopotamya'da MÖ 4000 ve Antik Mısır'da MÖ 3000 civarına dayanır. İlk aynalar cilalı bakırdan yapılmaktaydı. Daha sonra Çin'de MÖ 2000 civarında bronz aynalar üretilmeye başlandı.</p>
+                <p class="mt-3">El aynasının temel tasarımı - yansıtıcı bir yüzey ve tutma sapı - binlerce yıldır değişmemiştir. Modern aynalar cam ve gümüş kullanılarak yapılsa da, el aynasının temel işlevi ve formu antik dönemden beri aynıdır. Brown Üniversitesi'nde yapılan bir araştırmaya göre: "Ayna binlerce yıl önce icat edilmesine rağmen, modern zamanlara kadar nispeten değişmeden hayatta kalmıştır."</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat20" class="icat">
+                <h3 class="icat-title text-2xl font-bold">20. Çömlekçi Çarkı (Potter's Wheel)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 3500</span>
+                    <span class="origin-badge">Mezopotamya</span>
+                </div>
+                <p>Çömlekçi çarkı, çömlekçilik tarihinde devrim yaratan bir icat olmuştur. MÖ 3500 civarında Mezopotamya'da icat edilen çömlekçi çarkının temel çalışma prensibi - yatay bir disk üzerinde kil şekillendirme - günümüzde de aynıdır.</p>
+                <p class="mt-3">Çömlekçi çarkı, elektrikli motorlarla çalışır hale gelse de, temel mekanizması ve kullanımı bin yıllar boyunca değişmemiştir. Bu, form ve işlev açısından en mükemmel tasarımlardan biri olarak kabul edilir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat21" class="icat">
+                <h3 class="icat-title text-2xl font-bold">21. Merdiven (Ladder)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 10,000</span>
+                    <span class="origin-badge">İspanya, Mezolitik dönem</span>
+                </div>
+                <p>İnsanlık tarihinin en eski icatlarından biri olan merdiven, İspanya'da MÖ 10,000 civarına tarihlenen mağara resimlerinde görülmüştür. Günümüzde kullanılan A tipi merdiven ile birkaç bin yıl önceki merdivenler arasındaki temel tasarım farkı yok denecek kadar azdır.</p>
+                <p class="mt-3">Midland Ladders blogu şöyle belirtir: "İlk merdivenin nerede ve ne zaman yapılıp kullanıldığını gerçekten kimse bilmiyor, ancak merdivenler ilk kez birkaç bin yıl önce kullanılmaya başlandığından beri değişmeden kalmıştır." Merdiven - basamaklar ve onları birleştiren iki yan destek - basit ama etkili tasarımıyla binlerce yıldır aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat22" class="icat">
+                <h3 class="icat-title text-2xl font-bold">22. Maşa (Tongs)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 3000</span>
+                    <span class="origin-badge">Antik Mısır</span>
+                </div>
+                <p>Maşaların kullanımının tarihi MÖ 3000 yıllarına kadar uzanmaktadır. Başlangıçta basit ahşap parçalardan yapılan maşalar, zamanla bronz ve diğer metallerden yapılmaya başlandı.</p>
+                <p class="mt-3">Dalstrong'un belirttiği gibi: "Maşalar Antik Mısır zamanından beri var olsa da, temel tasarımları temelde aynı kalmıştır." Maria'S Condo'nun blogunda belirtildiği gibi: "Yüzyıllar boyunca, maşaların temel tasarımı göreceli olarak değişmeden kalmıştır." Bu basit ama etkili alet, sıcak nesneleri tutmak veya yerlerini değiştirmek için binlerce yıldır aynı prensibi kullanmaktadır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat23" class="icat">
+                <h3 class="icat-title text-2xl font-bold">23. Masa ve Sandalye (Table and Chair)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 3000</span>
+                    <span class="origin-badge">Antik Mısır</span>
+                </div>
+                <p>Masa ve sandalye, günlük hayatımızda en çok kullandığımız mobilyalardır. Antik Mısır'da MÖ 3000 civarında kullanılmaya başlanan bu mobilyaların temel tasarım prensipleri - düz bir üst yüzey ve destekleyen ayaklar (masa için), oturma yüzeyi ve sırt desteği (sandalye için) - binlerce yıldır değişmemiştir.</p>
+                <p class="mt-3">Stil ve malzemeler değişse de, masa ve sandalyenin temel işlevi ve tasarımı aynı kalmıştır. Günümüzdeki en modern masa ve sandalye bile, binlerce yıl öncekilerle aynı temel prensiplere dayanmaktadır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat24" class="icat">
+                <h3 class="icat-title text-2xl font-bold">24. Fırça (Brush)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 20,000</span>
+                    <span class="origin-badge">Paleolitik dönem</span>
+                </div>
+                <p>Fırça, insanlık tarihinin en eski aletlerinden biridir. Mağara resimlerinin yapıldığı Paleolitik dönemde bile çeşitli fırça formları kullanılıyordu. Boyama, temizleme ve kişisel bakım için kullanılan fırçaların temel tasarımı - kıl veya lifler tutturulmuş bir sap - onbinlerce yıldır değişmemiştir.</p>
+                <p class="mt-3">Günümüzde diş fırçası, boya fırçası, saç fırçası gibi çeşitli formları olsa da, fırçanın temel çalışma prensibi aynı kalmıştır. Sentetik malzemeler kullanılmaya başlansa da, fırçanın temel tasarımı değişmemiştir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat25" class="icat">
+                <h3 class="icat-title text-2xl font-bold">25. Pusula (Compass)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MS 200</span>
+                    <span class="origin-badge">Çin</span>
+                </div>
+                <p>Pusulanın tarihi Han Hanedanlığı döneminde (MÖ 202 - MS 220) Çin'de başlar. İlk pusulalar manyetik özelliğe sahip doğal mıknatıs taşı olan manyetit kullanılarak yapılmıştır.</p>
+                <p class="mt-3">Pilotinstitute.com'a göre: "1930'larda tasarlanan manyetik pusulalar, günümüzün modern sıvı pusulalarına yol açtı, bu tasarım temel olarak değişmeden kalmıştır." Elektronik GPS sistemleri yaygınlaşsa da, klasik pusula hala aynı manyetik yönelim prensibine dayalı olarak çalışmaktadır ve acil durum ekipmanı olarak değerini korumaktadır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat26" class="icat">
+                <h3 class="icat-title text-2xl font-bold">26. Yüksük (Thimble)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 1000</span>
+                    <span class="origin-badge">Antik Mısır</span>
+                </div>
+                <p>Yüksük, dikiş dikerken parmak ucunu iğnenin küt ucundan korumak için kullanılan küçük bir araçtır. Arkeolojik kanıtlar, yüksüklerin MÖ 1000 civarında Antik Mısır'da kullanıldığını göstermektedir.</p>
+                <p class="mt-3">Thimbles For You blogunda belirtildiği gibi: "Yüzlerce yıldır değişmeden kalan süreç, döküm, şekillendirme ve her bir parçayı karmaşık tasarımlarla el ile süslemeyi içerir." Bu küçük ama önemli alet, her ne kadar malzeme olarak bronzdan gümüşe ve günümüzde plastiğe geçiş yapmış olsa da, temel form ve işlev olarak binyıllardır aynı kalmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat27" class="icat">
+                <h3 class="icat-title text-2xl font-bold">27. Havan ve Eli (Mortar and Pestle)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 35,000</span>
+                    <span class="origin-badge">Güneybatı Asya</span>
+                </div>
+                <p>Havan ve eli, insanlık tarihinin en eski ve tasarımı en az değişen aletlerinden biridir. Cambridge Enviro'nun belirttiği gibi: "Tasarımları son 10.000 yıldır büyük ölçüde değişmeden kalmıştır."</p>
+                <p class="mt-3">Flavorish.ai'nin bir makalesinde şöyle denilmektedir: "Bu aletin basit ama etkili tasarımı büyük ölçüde değişmeden kalmış, çağlar boyunca süregelen işlevselliğini göstermiştir." Havan ve eli, çeşitli malzemeleri ezmek, karıştırmak ve öğütmek için kullanılan bu basit ama etkili araç, binlerce yıldır temel olarak aynı şekilde kullanılmaya devam etmektedir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat28" class="icat">
+                <h3 class="icat-title text-2xl font-bold">28. Kama (Wedge)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 200,000</span>
+                    <span class="origin-badge">Taş Devri</span>
+                </div>
+                <p>Kama, insanlık tarihinin en eski basit makinelerinden biridir. Taş Devri'nde, keskin taş aletler kama olarak kullanılmaktaydı. Kama, yüzyıllar boyunca odun kesmek, kaya parçalamak ve çeşitli malzemeleri ayırmak için kullanılmıştır.</p>
+                <p class="mt-3">Simple Machines - Google Arts & Culture'a göre: "Kama insanlar tarafından yaklaşık 200.000 yıldır kullanılmaktadır. Taşlar kama şeklinde keskinleştirilir ve sonra balta olarak veya hayvan derileri kazımak için kullanılırdı." Kamanın temel tasarımı - geniş bir yüzeye uygulanan kuvveti daha küçük bir alana yoğunlaştıran eğimli yüzey - yüzbinlerce yıldır değişmemiştir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat29" class="icat">
+                <h3 class="icat-title text-2xl font-bold">29. İp (Rope)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 40,000</span>
+                    <span class="origin-badge">Paleolitik dönem</span>
+                </div>
+                <p>İp, insanlık tarihinin en eski ve en temel aletlerinden biridir. Arkeolojik bulgular, ip yapımının tarihinin Paleolitik döneme, yaklaşık 40,000 yıl öncesine kadar uzandığını göstermektedir.</p>
+                <p class="mt-3">Invention & Technology Magazine'e göre: "Kolomb'dan yüz yıl sonra, Mayflower Yeni Dünya'ya yolunu bulduğunda, halat teknolojisi temel olarak değişmemişti." İpin temel yapım prensibi - lifleri bükmek ve örmek suretiyle daha güçlü bir yapı oluşturmak - onbinlerce yıldır aynı kalmıştır. Malzemeler değişse de, iplerin temel yapısı ve kullanımı binlerce yıldır aynıdır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat30" class="icat">
+                <h3 class="icat-title text-2xl font-bold">30. Güneş Saati (Sundial)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 1500</span>
+                    <span class="origin-badge">Antik Mısır</span>
+                </div>
+                <p>Güneş saati, insanlığın zamanı ölçmek için geliştirdiği en eski araçlardan biridir. İlk gerçek güneş saati, Antik Mısır'da MÖ 1500 civarında yeşil şistten yapılmıştır.</p>
+                <p class="mt-3">Güneş saati, gölgelerin günün farklı zamanlarında farklı uzunlukta olması prensibine dayanır. Bu temel prensip, binlerce yıldır değişmemiştir. Modern teknoloji daha hassas saat mekanizmaları geliştirmiş olsa da, güneş saatinin basit ama etkili tasarımı hala aynıdır ve süs eşyası veya eğitim aracı olarak kullanılmaya devam etmektedir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat31" class="icat">
+                <h3 class="icat-title text-2xl font-bold">31. Oklar (Arrows)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 30,000</span>
+                    <span class="origin-badge">Afrika ve Avrupa, Üst Paleolitik dönem</span>
+                </div>
+                <p>Oklar, insanlık tarihinin en eski ve en etkili silahlarından biridir. Arkeolojik kanıtlar, ok teknolojisinin MÖ 30,000'e kadar uzandığını göstermektedir.</p>
+                <p class="mt-3">Okların temel tasarımı - uç, gövde ve kuyruk (stabilizatör) - on binlerce yıldır büyük ölçüde değişmemiştir. Malzemeler gelişmiş olsa da (taştan metale, ahşaptan karbona), okun temel aerodinamik prensibi ve çalışma mantığı aynı kalmıştır. Modern okçulukta kullanılan oklar bile bu temel tasarıma dayanmaktadır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat32" class="icat">
+                <h3 class="icat-title text-2xl font-bold">32. Kilit ve Anahtar (Lock and Key)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 4000</span>
+                    <span class="origin-badge">Antik Mısır ve Mezopotamya</span>
+                </div>
+                <p>Kilit ve anahtar sistemleri, güvenliğin temel taşlarından biridir. İlk kilit ve anahtar mekanizması MÖ 4000 civarında Antik Mısır'da icat edilmiştir.</p>
+                <p class="mt-3">Via Technology'nin belirttiği gibi: "Kilit güvenliğinin tasarımı, tarih boyunca olağanüstü bir şekilde tutarlı kalmıştır ve yakın zamana kadar basit bir kilit ve anahtar mekanizmasından herhangi bir temel tasarım değişikliği olmamıştır." Modern kilitler elektronik hale gelmiş olsa da, geleneksel mekanik kilit ve anahtar sistemleri binlerce yıldır aynı temel prensiplere dayanmaktadır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat33" class="icat">
+                <h3 class="icat-title text-2xl font-bold">33. Merdane (Rolling Pin)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 9. yüzyıl</span>
+                    <span class="origin-badge">Etruria (modern İtalya)</span>
+                </div>
+                <p>Merdane, hamur açmak için kullanılan basit ama etkili bir mutfak aletidir. İlk olarak MÖ 9. yüzyılda bugünkü İtalya topraklarında yaşayan Etrüskler tarafından üretilmiştir.</p>
+                <p class="mt-3">Mariascondo.com'a göre: "Yüzyıllar boyunca, merdanenin temel tasarımı nispeten değişmeden kalmıştır." 1864'te John W. Reed tarafından "tek parça" merdane tasarımı patentlenmiştir - bu tasarım, her iki ucunda kolları olan içi boş bir ahşap silindirden oluşuyordu. Bu basit ama etkili tasarım, modern merdanelerin temelini oluşturmaktadır ve yüzlerce yıldır temel işlevi değişmemiştir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat34" class="icat">
+                <h3 class="icat-title text-2xl font-bold">34. Terazi (Scales/Balance)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 5000</span>
+                    <span class="origin-badge">Antik Mısır</span>
+                </div>
+                <p>Terazi, ağırlık ölçmek için kullanılan en eski araçlardan biridir. En basit formu olan eşit kollu terazi, ortada bir destek noktası ve iki uçta ağırlıkları taşıyan kefelerden oluşur. Arkeolojik bulgular, terazinin Antik Mısır'da MÖ 5000 civarında kullanıldığını göstermektedir.</p>
+                <p class="mt-3">Terazinin temel çalışma prensibi - denge ve karşı ağırlık kullanarak ölçüm yapma - elektronik ölçüm aletlerinin yaygınlaşmasına rağmen değişmemiştir. Bugün hâlâ pek çok laboratuvarda hassas ölçüm için aynı prensibe dayanan teraziler kullanılmaktadır. Temel tasarımı binlerce yıldır değişmeden kalmış, sadece hassasiyet ve malzemelerde iyileştirmeler yapılmıştır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat35" class="icat">
+                <h3 class="icat-title text-2xl font-bold">35. Tokmak (Mallet)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 10,000</span>
+                    <span class="origin-badge">Neolitik dönem</span>
+                </div>
+                <p>Tokmak, çekiçten farklı olarak, darbe yüzeyi daha geniş ve genellikle daha yumuşak malzemeden yapılmış bir el aletidir. İlk tokmaklara ait kanıtlar Neolitik döneme, MÖ 10,000 civarına dayanır.</p>
+                <p class="mt-3">Taş, ahşap ve kemikten yapılan ilk tokmaklardan günümüzün kauçuk ve plastik tokmaklarına kadar, aletin temel tasarımı - geniş bir darbe yüzeyi olan bir sap - binlerce yıldır değişmemiştir. Özellikle ahşap ve taş işlemede kullanılan tokmaların, günümüzde kullanılanlarla ilk örnekleri arasında tasarım açısından çok az fark vardır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat36" class="icat">
+                <h3 class="icat-title text-2xl font-bold">36. Çömlek ve Seramik Kaplar (Pottery and Ceramic Vessels)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 18,000</span>
+                    <span class="origin-badge">Çin ve Japonya, Son Buzul Çağı</span>
+                </div>
+                <p>Çömlek ve seramik kaplar, insanlık tarihinin en eski ve en önemli buluşlarından biridir. İlk pişmiş kil kapların yaklaşık MÖ 18,000 civarında Doğu Asya'da yapıldığı düşünülmektedir.</p>
+                <p class="mt-3">Kil işleme, şekillendirme ve pişirme teknikleri gelişmiş olsa da, çömlek ve seramik kapların temel üretim prensipleri ve formları binlerce yıldır büyük ölçüde aynı kalmıştır. Bir çömlek ustasının çarkında şekillendirdiği kil kap ile binlerce yıl önce üretilmiş olanlar arasında temel tasarım açısından çok az fark vardır. Bu, insanlığın en eski ve en değişmeyen teknolojilerinden biridir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat37" class="icat">
+                <h3 class="icat-title text-2xl font-bold">37. Tarak (Comb)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 5000</span>
+                    <span class="origin-badge">Antik Mısır ve Mezopotamya</span>
+                </div>
+                <p>Tarak, insan kullanımına sunulan en eski kişisel bakım aletlerinden biridir. Arkeologlar, MÖ 5000 civarına tarihlenen taraklar bulmuşlardır. İlk taraklar ahşap, kemik veya fildişinden yapılmıştır.</p>
+                <p class="mt-3">Tarakların temel tasarımı - bir sap ve yan yana dizilmiş dişler - binlerce yıldır neredeyse hiç değişmemiştir. Malzemeler değişmiş olsa da (doğal malzemelerden plastiğe ve metale), tarakların temel işlevi ve formu aynı kalmıştır. Günümüzde kullandığımız taraklar, antik dönemdekilere şaşırtıcı derecede benzemektedir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat38" class="icat">
+                <h3 class="icat-title text-2xl font-bold">38. Matara/Su Kabı (Canteen/Water Vessel)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 3000</span>
+                    <span class="origin-badge">Antik Mezopotamya</span>
+                </div>
+                <p>Su taşımak için kullanılan kaplar, en eski ve en temel insan icatlarından biridir. Taşınabilir su kapları ya da mataralar MÖ 3000 civarında Mezopotamya'da kullanılmaya başlanmıştır. İlk örnekler, hayvan derisi, pişmiş toprak veya ahşaptan yapılmıştı.</p>
+                <p class="mt-3">Mataranın temel tasarımı - suyu taşımak ve korumak için kapalı, taşınabilir bir kap - malzemesi alüminyum, plastik veya paslanmaz çelik olsa bile binlerce yıldır değişmemiştir. Günümüzün modern şişeleri ve mataralarının temel işlevi ve tasarım prensibi, antik örneklerinden farklı değildir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat39" class="icat">
+                <h3 class="icat-title text-2xl font-bold">39. Olta (Fishing Hook)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 30,000</span>
+                    <span class="origin-badge">Okyanusya ve Doğu Timor</span>
+                </div>
+                <p>Olta, insanlık tarihinin en eski ve tasarımı en az değişen aletlerinden biridir. Arkeolojik bulgular, ilk oltaların MÖ 30,000 civarında Okyanusya ve Doğu Timor'da kullanıldığını göstermektedir. İlk oltalar genellikle kemik, kabuk veya boynuzdan yapılmıştır.</p>
+                <p class="mt-3">Oltanın "J" şeklindeki basit tasarımı - bir uçta sivri kısım ve diğer uçta ip bağlama yeri - onbinlerce yıldır temel olarak değişmemiştir. Modern oltalar çelikten yapılsa ve çeşitli boyut ve stillerde üretilse de, temel tasarım prensibi aynıdır. Oltanın balığı yakalamak için kullandığı mekanik prensip, prehistorik dönemden beri değişmemiştir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat40" class="icat">
+                <h3 class="icat-title text-2xl font-bold">40. Kürek (Shovel)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 5000</span>
+                    <span class="origin-badge">Neolitik dönem, çeşitli kültürler</span>
+                </div>
+                <p>Kürek, toprağı kazmak, taşımak veya karıştırmak için kullanılan temel bir alettir. Arkeolojik bulgular, ilk küreklerin MÖ 5000 civarında Neolitik dönemde kullanıldığını göstermektedir. İlk kürekler hayvan kemiklerinden veya düzleştirilmiş ahşaptan yapılmıştı.</p>
+                <p class="mt-3">Küreğin temel tasarımı - bir sap ve kürek ağzı - binlerce yıldır temel olarak değişmemiştir. Modern kürekler çelik, alüminyum veya kompozit malzemelerden yapılsa da, temel işlevi ve tasarımı antik dönemdekilerle aynıdır. Günümüzde bahçecilikte, inşaatta ve tarımda kullanılan kürekler, temel tasarım açısından binlerce yıl öncekilerle neredeyse aynıdır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat41" class="icat">
+                <h3 class="icat-title text-2xl font-bold">41. Fırın (Oven)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 29,000</span>
+                    <span class="origin-badge">Orta Avrupa</span>
+                </div>
+                <p>Fırının ilk örnekleri, MÖ 29,000 civarında Orta Avrupa'da kullanılmaya başlanmıştır. Bunlar basit çukur fırınlardı - toprakta kazılmış çukurlar ateşle ısıtılır ve sonra yiyecek pişirmek için kullanılırdı. Antik Mısır'da ve Roma İmparatorluğu'nda daha gelişmiş tuğla ve taş fırınlar inşa edilmiştir.</p>
+                <p class="mt-3">Fırının temel çalışma prensibi - kapalı bir alanda ısı üretip bu ısıyı yemek pişirmek için kullanmak - binlerce yıldır değişmemiştir. Modern fırınlar elektrik veya gaz kullanarak çalışsa da, temel işlev ve tasarım prensibi aynıdır. Günümüzün en gelişmiş fırınları bile, binlerce yıl önce kullanılan temel ısıtma ve pişirme prensiplerini kullanmaktadır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat42" class="icat">
+                <h3 class="icat-title text-2xl font-bold">42. Süpürge (Broom)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 2000-3000</span>
+                    <span class="origin-badge">Antik Mısır ve Çin</span>
+                </div>
+                <p>Süpürge, temizlikte kullanılan en eski aletlerden biridir. İlk süpürgeler MÖ 2000-3000 civarında Antik Mısır ve Çin'de kullanılmaya başlanmıştır. Bunlar genellikle bir sapa bağlanmış dallar, otlar veya liflerden yapılmaktaydı.</p>
+                <p class="mt-3">Süpürgenin temel tasarımı - bir sap ve ucuna bağlı süpürücü kısım - binlerce yıldır değişmemiştir. Modern süpürgelerde sentetik lifler kullanılsa da, temel işlevi ve tasarımı antik dönemdekilerle aynıdır. YouTube'da "Designs Through History that Just Never Changed" videosunda belirtildiği gibi, süpürge, tarih boyunca neredeyse hiç değişmeyen tasarımlardan biridir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat43" class="icat">
+                <h3 class="icat-title text-2xl font-bold">43. Zar (Dice)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 3000</span>
+                    <span class="origin-badge">Mezopotamya ve İndus Vadisi Uygarlığı</span>
+                </div>
+                <p>Zarlar, insanlık tarihinin en eski oyun aletlerinden biridir. İlk zarlar MÖ 3000 civarında Mezopotamya ve İndus Vadisi Uygarlığı'nda kullanılmıştır. Bunlar genellikle kemik, fildişi veya kilden yapılmış küpler şeklindeydi.</p>
+                <p class="mt-3">Zarın temel tasarımı - her yüzünde farklı sayıda işaret bulunan küp şekli - binlerce yıldır neredeyse hiç değişmemiştir. Modern zarlar plastikten yapılsa da, temel şekli ve işlevi antik dönemde kullanılanlarla aynıdır. Günümüzde masa oyunlarında ve kumarda kullanılan zarlar, beş bin yıl öncekilerle neredeyse aynı tasarıma sahiptir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat44" class="icat">
+                <h3 class="icat-title text-2xl font-bold">44. Ok ve Yay (Bow and Arrow)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 20,000</span>
+                    <span class="origin-badge">Afrika</span>
+                </div>
+                <p>Ok ve yay, insanlığın en eski ve en etkili silah sistemlerinden biridir. Arkeolojik bulgular, ok ve yayın MÖ 20,000 civarında Afrika'da kullanıldığını göstermektedir. Daha sonra bağımsız olarak dünyanın diğer bölgelerinde de geliştirilmiştir.</p>
+                <p class="mt-3">Ok ve yayın temel tasarımı - esneklik prensibini kullanarak oku fırlatmak için gerilmiş bir ip ve esnek bir gövde - binlerce yıldır değişmemiştir. Modern okçulukta kullanılan kompozit yaylar, karbon fiber oklar ve diğer ileri teknoloji ürünlerine rağmen, temel çalışma prensibi aynıdır. Bugün spor amaçlı kullanılan geleneksel yaylar, prehistorik atalarından tasarım açısından çok az farklıdır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat45" class="icat">
+                <h3 class="icat-title text-2xl font-bold">45. Yelken (Sail)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 5500</span>
+                    <span class="origin-badge">Antik Mısır ve Mezopotamya</span>
+                </div>
+                <p>Yelken, insan ulaşım tarihinde devrim yaratan bir icat olmuştur. İlk yelkenli teknelere ait kanıtlar MÖ 5500 civarına, Antik Mısır'a dayanmaktadır. İlk yelkenler muhtemelen dokuma kumaş veya hasırdan yapılmıştı.</p>
+                <p class="mt-3">Yelkenin temel çalışma prensibi - rüzgar enerjisini yakalamak ve bu enerjiyi tekneyi hareket ettirmek için kullanmak - binlerce yıldır değişmemiştir. Modern yelkenler daha dayanıklı sentetik malzemelerden yapılsa ve daha verimli tasarımlara sahip olsa da, temel işlevi antik dönemdekilerle aynıdır. Günümüzde yarış yelkenlilerinde bile kullanılan yelkenlerin çalışma prensibi, binlerce yıl önce Nil Nehri'nde yüzen teknelerdeki yelkenlerinkiyle aynıdır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat46" class="icat">
+                <h3 class="icat-title text-2xl font-bold">46. Testere (Saw)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 3000</span>
+                    <span class="origin-badge">Antik Mısır</span>
+                </div>
+                <p>Testere, ahşap ve diğer malzemeleri kesmek için kullanılan en eski aletlerden biridir. Arkeolojik bulgular, dişli metal testerelerin MÖ 3000 civarında Antik Mısır'da kullanıldığını göstermektedir. Daha ilkel taş ve çakmaktaşı testereler ise daha da eskiye dayanmaktadır.</p>
+                <p class="mt-3">Testerenin temel tasarımı - bir kenarı boyunca sıralanmış dişleri olan düz bir bıçak - binlerce yıldır değişmemiştir. Elektrikli testereler gibi modern teknolojik gelişmeler olsa da, el testerelerinin temel tasarımı ve çalışma prensibi aynı kalmıştır. Bugün bir marangozun kullandığı el testeresi, antik dönemdekilerle işlevsel olarak neredeyse aynıdır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat47" class="icat">
+                <h3 class="icat-title text-2xl font-bold">47. Dikiş İğnesi (Sewing Needle)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 17,500</span>
+                    <span class="origin-badge">Paleolitik dönem</span>
+                </div>
+                <p>Yukarıda "İğne" başlığı altında detaylı olarak açıklanmıştır.</p>
+                <a href="#icat5" class="back-to-top">İğne bölümüne git</a>
+            </div>
+
+            <div id="icat48" class="icat">
+                <h3 class="icat-title text-2xl font-bold">48. Bıçak (Knife)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 1.4 milyon</span>
+                    <span class="origin-badge">Doğu Afrika, Alt Paleolitik dönem</span>
+                </div>
+                <p>Bıçak, insanlığın kullandığı en eski aletlerden biridir. İlkel taş bıçaklar Alt Paleolitik dönemde, MÖ 1.4 milyon yıl önce Doğu Afrika'da kullanılmaya başlanmıştır. Zamanla taştan metale geçiş yaşanmış, bronz ve sonra demir bıçaklar yapılmıştır.</p>
+                <p class="mt-3">Bıçağın temel tasarımı - bir sap ve keskin kenarlı bir bıçak - milyon yıldan uzun bir süre boyunca temel olarak değişmemiştir. Modern bıçaklar paslanmaz çelikten yapılsa ve daha gelişmiş özelliklere sahip olsa da, temel işlevi ve tasarımı ilk örneklerinkiyle aynıdır. Bu, insanlığın kullandığı en eski ve tasarımı en az değişen aletlerden biridir.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat49" class="icat">
+                <h3 class="icat-title text-2xl font-bold">49. Eğirmen (Spindle)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 10,000</span>
+                    <span class="origin-badge">Neolitik dönem, Yakın Doğu</span>
+                </div>
+                <p>Eğirmen, lif eğirmek için kullanılan basit ama etkili bir alettir. Arkeolojik bulgular, ilk eğirmenlerin MÖ 10,000 civarında Neolitik dönemde kullanıldığını göstermektedir. Bu dönemde insanlar, hayvan yününü ve bitki liflerini ipliğe dönüştürmek için eğirmen kullanmaya başlamıştır.</p>
+                <p class="mt-3">Eğirmenin temel tasarımı - ağırlık ve dönme prensiplerini kullanan çubuk ve ağırlık sistemi - binlerce yıldır değişmemiştir. Modern dönemde elektrikli iplik eğirme makineleri geliştirilmiş olsa da, geleneksel el eğirmenleri hala aynı temel prensiple çalışmaktadır. Günümüzde el sanatları ve geleneksel dokumacılıkta kullanılan eğirmenler, binlerce yıl öncekilerle neredeyse aynıdır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+            <div id="icat50" class="icat">
+                <h3 class="icat-title text-2xl font-bold">50. Dokuma Tezgahı (Loom)</h3>
+                <div class="icat-meta">
+                    <span class="year-badge">MÖ 6000</span>
+                    <span class="origin-badge">Antik Mısır ve Mezopotamya</span>
+                </div>
+                <p>Dokuma tezgahı, kumaş dokumak için kullanılan temel bir alettir. İlk dokuma tezgahlarının MÖ 6000 civarında Antik Mısır ve Mezopotamya'da kullanıldığı düşünülmektedir. Bunlar dikey tezgahlar olup, çözgü iplikleri ağırlıklarla geriliyordu.</p>
+                <p class="mt-3">Dokuma tezgahının temel çalışma prensibi - çözgü iplikleri arasından atkı ipliklerini geçirerek kumaş oluşturmak - binlerce yıldır değişmemiştir. Elektrikli ve bilgisayar kontrollü dokuma tezgahları geliştirilmiş olsa da, geleneksel el dokuma tezgahlarının temel mekanizması ve tasarımı antik dönemdekilerle aynıdır. Günümüzde geleneksel dokumacılıkta kullanılan tezgahlar, binlerce yıl önce kullanılanlardan işlevsel olarak çok az farklıdır.</p>
+                <a href="#contents" class="back-to-top"><i class="fas fa-arrow-up mr-1"></i> Listeye Dön</a>
+            </div>
+
+        </div>
+
+        <footer class="mt-10 pt-8 pb-10 border-t border-gray-200 text-center text-gray-500 text-sm">
+            <p>© 2025 Ümit Emre Erdoğan</p>
+            <p class="mt-2">Tasarımı Değişmeyen İcatlar Arşivi</p>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll to element function
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDkdR3QLOxrPeUxNg7zU3fsNhs9MqQYD%2FL4b%2FckMYrjhYfl9gBJSHLH4mqSNdO3FGSpHMAdXOf%2FrLZEC4xoA6JI0e2%2B%2FOTymYgARW8ZbOMVrY0YWGgcER%2FwoWz6sD9nAKVB%2B1JNSejJcTwXK9Zcz6V%2FDl8mH0sKPA%2By16OWCMCVg3EVk9eskxYRSsiZlqFHxsFRr6f%2Be2LR8FKRLM7nQ5cyxbG8Mi5sglJxOYH20baribiYznmeAa8k%2BaQGEfp1oiIo5alLZgGvQGmveMu77GI3n%2BNfKoBVu2IKNRh0OAaekphnz7%2F0GXQbLw7p3UlwDwF1lPaYCds8zuesF%2BjvEEsElwevTiRWFksSDnAj9737FQQUUU4RoDnxoofEGR91mzMDAxeEV6NksHBoL%2BZwZAIwXXT5xSIzNXeKla8NXy5sKEAM97bM7WepLFLCD7SoS%2BlRSiNeT2dpdf3ZcGzHR26JyhgHm29kCB%2FNc2nBdiAQAz1mpDNTKio4CViExHgDGXFizAbImVh9bvTktBFbDWF98%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDkdR3QLOxrPeUxNg7zU3fsNhs9MqQYD/L4b/ckMYrjhYfl9gBJSHLH4mqSNdO3FGSpHMAdXOf/rLZEC4xoA6JI0e2+/OTymYgARW8ZbOMVrY0YWGgcER/woWz6sD9nAKVB+1JNSejJcTwXK9Zcz6V/Dl8mH0sKPA+y16OWCMCVg3EVk9eskxYRSsiZlqFHxsFRr6f+e2LR8FKRLM7nQ5cyxbG8Mi5sglJxOYH20baribiYznmeAa8k+aQGEfp1oiIo5alLZgGvQGmveMu77GI3n+NfKoBVu2IKNRh0OAaekphnz7/0GXQbLw7p3UlwDwF1lPaYCds8zuesF+jvEEsElwevTiRWFksSDnAj9737FQQUUU4RoDnxoofEGR91mzMDAxeEV6NksHBoL+ZwZAIwXXT5xSIzNXeKla8NXy5sKEAM97bM7WepLFLCD7SoS+lRSiNeT2dpdf3ZcGzHR26JyhgHm29kCB/Nc2nBdiAQAz1mpDNTKio4CViExHgDGXFizAbImVh9bvTktBFbDWF98=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
